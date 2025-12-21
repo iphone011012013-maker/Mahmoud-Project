@@ -50,7 +50,7 @@
     <meta name="robots" content="index, follow" />
 
     <link rel="icon" href="https://mahmoud-project.netlify.app/project.png" type="image/png">
-    <meta name="theme-color" content="#000000" />
+
     <meta name="mobile-web-app-capable" content="yes" />
 
     <script type="application/ld+json">{
@@ -79,7 +79,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pro-black': '#0a0a0a',
+                        'pro-dark': '#121212',
+                        'pro-gold': '#D4AF37',
+                        'pro-red': '#8B0000',
+                        'pro-gray': '#2A2A2A',
+                        'pro-netlify': '#00C7B7', // لون Netlify المميز
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
         body {
