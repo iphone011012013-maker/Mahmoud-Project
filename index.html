@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريع محمود إبراهيم | AboElfadl Portfolio</title>
+    
+    <!-- خط تجوال للكتابة العربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS للتنسيق السريع -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- تخصيص ألوان التايلويند -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pro-black': '#0a0a0a',
+                        'pro-dark': '#121212',
+                        'pro-gold': '#D4AF37',
+                        'pro-red': '#8B0000',
+                        'pro-gray': '#2A2A2A',
+                        'pro-netlify': '#00C7B7', // لون Netlify المميز
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* تأثيرات الخلفية المتحركة البسيطة */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* تأثير الزجاج للكروت */
+        .glass-card {
+            background: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #D4AF37;
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* تحسين شكل شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* تأثير النبض للزر */
+        .pulse-gold {
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        /* تنسيق خاص للأزرار الثلاثة */
+        .project-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            border-width: 1px;
+            text-decoration: none;
+        }
+        
+        @media (min-width: 768px) {
+            .project-btn {
+                font-size: 0.875rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- الخلفية الشبكية -->
+    <div class="bg-grid"></div>
+
+    <!-- رأس الصفحة (Header) -->
+    <header class="w-full py-8 px-4 border-b border-pro-gray bg-pro-black/80 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <!-- معلومات المطور -->
+            <div class="flex items-center gap-4 w-full md:w-auto">
+                <div class="relative w-16 h-16 rounded-full overflow-hidden border-2 border-pro-gold pulse-gold flex items-center justify-center bg-pro-dark shrink-0">
+                    <i class="fa-solid fa-user-shield text-3xl text-pro-gold"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+                        Mahmoud AboElfadl
+                        <span class="hidden md:inline text-gray-500">|</span>
+                        <span class="text-pro-gold text-sm md:text-base font-normal">Pro</span>
+                    </h1>
+                    <p class="text-gray-400 text-xs md:text-sm mt-1 max-w-md">
+                        طالب بقسم التاريخ - جامعة حلوان | <span class="text-pro-gold">Web Developer & Cyber Security Enthusiast</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- روابط التواصل الرئيسية -->
+            <div class="flex gap-3 shrink-0">
+                <a href="https://github.com/iphone011012013-maker/" target="_blank" class="w-10 h-10 rounded-full bg-pro-dark border border-gray-700 flex items-center justify-center text-white hover:text-pro-gold hover:border-pro-gold transition-all" title="GitHub Profile">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+                <a href="https://mahmoud-aboelfadl.my.canva.site" target="_blank" class="w-10 h-10 rounded-full bg-pro-dark border border-gray-700 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-all" title="Website">
+                    <i class="fa-solid fa-globe text-xl"></i>
+                </a>
+                <a href="mailto:apoalfadl90@gmail.com" class="w-10 h-10 rounded-full bg-pro-dark border border-gray-700 flex items-center justify-center text-white hover:bg-pro-red hover:border-pro-red transition-all" title="Email">
+                    <i class="fa-solid fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 py-10">
+
+        <!-- أدوات التحكم والبحث -->
+        <div class="mb-10 flex flex-col md:flex-row justify-between items-center gap-4 bg-pro-dark p-4 rounded-xl border border-gray-800 shadow-lg">
+            
+            <!-- أزرار الفلترة -->
+            <div class="flex flex-wrap gap-2 bg-black p-1 rounded-lg w-full md:w-auto justify-center md:justify-start">
+                <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-md text-sm font-bold transition-all bg-pro-gold text-black hover:bg-yellow-500 flex-1 md:flex-none">الكل</button>
+                <button onclick="filterProjects('security')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-shield-halved ml-2"></i>Security</button>
+                <button onclick="filterProjects('tools')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-toolbox ml-2"></i>Tools</button>
+                <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-globe ml-2"></i>Web</button>
+            </div>
+
+            <!-- شريط البحث -->
+            <div class="relative w-full md:w-1/3">
+                <input type="text" id="searchInput" onkeyup="searchProjects()" placeholder="ابحث عن أداة أو مشروع..." class="w-full bg-black border border-gray-700 text-white px-4 py-2 pr-10 rounded-lg focus:outline-none focus:border-pro-gold focus:ring-1 focus:ring-pro-gold transition-all">
+                <i class="fa-solid fa-search absolute left-3 top-3 text-gray-500"></i>
+            </div>
+        </div>
+
+        <!-- شبكة المشاريع -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Projects injected via JS -->
+        </div>
+
+        <!-- رسالة لا توجد نتائج -->
+        <div id="noResults" class="hidden text-center py-10">
+            <i class="fa-solid fa-ghost text-4xl text-gray-600 mb-4"></i>
+            <p class="text-gray-400">لا توجد مشاريع تطابق بحثك.</p>
+        </div>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="w-full bg-pro-black border-t border-gray-800 py-6 mt-10">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">
+                تم التصميم والتطوير بواسطة <span class="text-pro-gold font-bold">محمود إبراهيم (AboElfadl)</span> &copy; 2025
+            </p>
+            <div class="mt-2 text-xs text-gray-600">
+                <span class="mx-2"><i class="fa-solid fa-shield-halved ml-1"></i>Cyber Security Awareness</span>
+                <span class="mx-2"><i class="fa-solid fa-code ml-1"></i>Full Stack Projects</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سكربت البيانات والمنطق -->
+    <script>
+        // ============================================
+        // منطقة البيانات: 26 مشروعاً (القائمة الكاملة)
+        // ============================================
+        const projectsData = [
+            // 1. Tools (Base)
+            {
+                id: 1,
+                title: "AboElfadl-Tools",
+                description: "مكتبة ضخمة من الأدوات الذكية للمطورين والمستخدمين: أدوات برمجة، ذكاء اصطناعي، إنشاء أكواد، وتحرير نصوص. ⚡",
+                tags: ["Web Tools", "Security", "AI"],
+                category: "tools",
+                icon: "fa-solid fa-shield-virus",
+                color: "text-pro-gold",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/AboElfadl-Tools/tree/main",
+                    netlify: "https://app.netlify.com/projects/aboelfadl-tools/overview",
+                    live: "https://aboelfadl-tools.netlify.app"
+                }
+            },
+            // 2-7. مشاريع الويب والملفات الشخصية
+            {
+                id: 2,
+                title: "Mahmoud-Ab0-elfadl",
+                description: "بورتفوليو شخصي (نسخة الويب) لعرض المهارات والخدمات البرمجية.",
+                tags: ["Portfolio", "Personal"],
+                category: "web",
+                icon: "fa-solid fa-id-badge",
+                color: "text-blue-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/Mahmoud-Abo-elfadl",
+                    netlify: "https://app.netlify.com/projects/mahmoud-ab0-elfadl/overview",
+                    live: "https://mahmoud-ab0-elfadl.netlify.app/"
+                }
+            },
+            {
+                id: 3,
+                title: "Web-aboelfadl",
+                description: "مشروع خدمات الويب المتكاملة، يقدم حلولاً برمجية وتصاميم عصرية.",
+                tags: ["Web Dev", "Services"],
+                category: "web",
+                icon: "fa-solid fa-globe",
+                color: "text-teal-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/web-aboelfadl",
+                    netlify: "https://app.netlify.com/projects/web-aboelfadl/overview",
+                    live: "https://web-aboelfadl.netlify.app/"
+                }
+            },
+            {
+                id: 4,
+                title: "AboElfadl Hacker",
+                description: "منصة التوعية الأمنية: محاكاة لأدوات الاختراق لتعليم الحماية.",
+                tags: ["Security", "Simulation"],
+                category: "security",
+                icon: "fa-solid fa-user-secret",
+                color: "text-pro-red",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/aboelfadl-hacker",
+                    netlify: "https://app.netlify.com/projects/aboelfadl-hacker/overview",
+                    live: "https://aboelfadl-hacker.netlify.app/"
+                }
+            },
+            {
+                id: 5,
+                title: "Codee-Dev",
+                description: "مكتبة الأكواد: مرجع للمبرمجين يحتوي على مقتطفات برمجية جاهزة.",
+                tags: ["Coding", "Library"],
+                category: "tools",
+                icon: "fa-solid fa-code",
+                color: "text-purple-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/Codee-deev",
+                    netlify: "https://app.netlify.com/projects/codee-deev/overview",
+                    live: "https://codee-deev.netlify.app/"
+                }
+            },
+            {
+                id: 6,
+                title: "Editor-TXT",
+                description: "محرر نصوص ويب سريع: تدوين الملاحظات والأكواد وحفظها محلياً.",
+                tags: ["Editor", "Utility"],
+                category: "tools",
+                icon: "fa-solid fa-file-pen",
+                color: "text-green-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/EDITOR-TXT",
+                    netlify: "https://app.netlify.com/projects/editor-txt/overview",
+                    live: "https://editor-txt.netlify.app/"
+                }
+            },
+            {
+                id: 7,
+                title: "QR-AboElfadl",
+                description: "مولد أكواد QR: أداة لتحويل الروابط والنصوص إلى باركود فورياً.",
+                tags: ["Generator", "QR"],
+                category: "tools",
+                icon: "fa-solid fa-qrcode",
+                color: "text-pink-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/QR-Code",
+                    netlify: "https://app.netlify.com/projects/qr-abo-elfadl/overview",
+                    live: "https://qr-abo-elfadl.netlify.app/"
+                }
+            },
+            // 8-13. أدوات عامة
+            {
+                id: 8,
+                title: "Sound-Ops-Pro",
+                description: "أداة احترافية للعمليات الصوتية وتشغيل الملفات بمرونة.",
+                tags: ["Audio", "Tools"],
+                category: "tools",
+                icon: "fa-solid fa-music",
+                color: "text-yellow-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/Sound-Ops-pro",
+                    netlify: "https://app.netlify.com/projects/sound-ops-pro/overview",
+                    live: "https://sound-ops-pro.netlify.app/"
+                }
+            },
+            {
+                id: 9,
+                title: "Tester-Phone",
+                description: "أداة فحص الهاتف: محاكاة لاختبار وظائف وخصائص الأجهزة.",
+                tags: ["Mobile", "Testing"],
+                category: "tools",
+                icon: "fa-solid fa-mobile-screen-button",
+                color: "text-blue-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/tester-Phone",
+                    netlify: "https://app.netlify.com/projects/tester-phone/overview",
+                    live: "https://tester-phone.netlify.app/"
+                }
+            },
+            {
+                id: 10,
+                title: "Free-Tools-Hacker",
+                description: "تجميعة أدوات اختبار الاختراق (Ethical Hacking) المجانية.",
+                tags: ["Hacking", "Security", "Free"],
+                category: "security",
+                icon: "fa-solid fa-user-ninja",
+                color: "text-red-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/free-tools-hacker",
+                    netlify: "https://app.netlify.com/projects/free-tools-hacker/overview",
+                    live: "https://free-tools-hacker.netlify.app/"
+                }
+            },
+            {
+                id: 11,
+                title: "Hassan-Ibrahim",
+                description: "مشروع ويب شخصي: تصميم متجاوب وأنيق لعرض الملف الشخصي.",
+                tags: ["Portfolio", "Web"],
+                category: "web",
+                icon: "fa-solid fa-user-tie",
+                color: "text-indigo-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/HASSAN-IBRAHEM",
+                    netlify: "https://app.netlify.com/projects/hassan-ibrahim/overview",
+                    live: "https://hassan-ibrahim.netlify.app/"
+                }
+            },
+            {
+                id: 12,
+                title: "Mac-OS-AboElfadl",
+                description: "محاكاة نظام Mac OS: تجربة واجهة ماك كاملة داخل المتصفح.",
+                tags: ["Simulation", "UI/UX", "OS"],
+                category: "web",
+                icon: "fa-brands fa-apple",
+                color: "text-gray-300",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/mac-os-aboelfadl",
+                    netlify: "https://app.netlify.com/projects/mac-os-aboelfadl/overview",
+                    live: "https://mac-os-aboelfadl.netlify.app/"
+                }
+            },
+            {
+                id: 13,
+                title: "National-Number",
+                description: "أداة الرقم القومي: استخراج البيانات من الرقم القومي المصري.",
+                tags: ["Egypt", "Data Tool"],
+                category: "tools",
+                icon: "fa-solid fa-id-card",
+                color: "text-emerald-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/National_number",
+                    netlify: "https://app.netlify.com/projects/national-number/overview",
+                    live: "https://national-number.netlify.app/"
+                }
+            },
+            // 14-20. أدوات أمنية ومحاكاة (المجموعة المفقودة سابقاً)
+            {
+                id: 14,
+                title: "333uruf",
+                description: "أداة النصوص والحماية: تشفير بسيط أو معالجة نصوص متقدمة.",
+                tags: ["Security", "Encryption"],
+                category: "security",
+                icon: "fa-solid fa-lock",
+                color: "text-gray-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/333uruf",
+                    netlify: "https://app.netlify.com/projects/333uruf/overview",
+                    live: "https://333uruf.netlify.app/"
+                }
+            },
+            {
+                id: 15,
+                title: "To-Web",
+                description: "أداة توجيه الروابط: تحكم في مسارات الويب (URL Redirection).",
+                tags: ["Tools", "Web"],
+                category: "security",
+                icon: "fa-solid fa-link",
+                color: "text-orange-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/to-web",
+                    netlify: "https://app.netlify.com/projects/to-web/overview",
+                    live: "https://to-web.netlify.app/"
+                }
+            },
+            {
+                id: 16,
+                title: "Hide-Link",
+                description: "أداة إخفاء الروابط: محاكاة لأساليب إخفاء الروابط الخبيثة للتوعية.",
+                tags: ["Security", "Privacy"],
+                category: "security",
+                icon: "fa-solid fa-eye-slash",
+                color: "text-gray-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/hide-link",
+                    netlify: "https://app.netlify.com/projects/hide-link/overview",
+                    live: "https://hide-link.netlify.app/"
+                }
+            },
+            {
+                id: 17,
+                title: "WhatsApp Verification",
+                description: "محاكاة التحقق من واتساب: صفحة توعوية تشرح كيف تتم عمليات التصيد.",
+                tags: ["Phishing Awareness", "WhatsApp"],
+                category: "security",
+                icon: "fa-brands fa-whatsapp",
+                color: "text-green-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/whats-app-verification",
+                    netlify: "https://app.netlify.com/projects/whats-app-verification/overview",
+                    live: "https://whats-app-verification.netlify.app/"
+                }
+            },
+            {
+                id: 18,
+                title: "Instagram Reel",
+                description: "محاكاة انستجرام ريلز: واجهة تشبه انستجرام للتوعية بالروابط الوهمية.",
+                tags: ["Phishing Awareness", "Instagram"],
+                category: "security",
+                icon: "fa-brands fa-instagram",
+                color: "text-pink-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/ins-tagram-reel",
+                    netlify: "https://app.netlify.com/projects/ins-tagram-reel/overview",
+                    live: "https://ins-tagram-reel.netlify.app/"
+                }
+            },
+            {
+                id: 19,
+                title: "Facebook Watch",
+                description: "محاكاة فيسبوك فيديو: واجهة توعوية تحاكي صفحات الفيديوهات المشبوهة.",
+                tags: ["Phishing Awareness", "Facebook"],
+                category: "security",
+                icon: "fa-brands fa-facebook",
+                color: "text-blue-600",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/face-book-watch",
+                    netlify: "https://app.netlify.com/projects/face-book-watch/overview",
+                    live: "https://face-book-watch.netlify.app/"
+                }
+            },
+            {
+                id: 20,
+                title: "Telegram Verification",
+                description: "محاكاة بوت تيليجرام: صفحة توضح كيف يخدع المحتالون المستخدمين.",
+                tags: ["Phishing Awareness", "Telegram"],
+                category: "security",
+                icon: "fa-brands fa-telegram",
+                color: "text-sky-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/telegram-verification-bot",
+                    netlify: "https://app.netlify.com/projects/telegram-verification-bot/overview",
+                    live: "https://telegram-verification-bot.netlify.app/"
+                }
+            },
+            // 21-26. أدوات أمنية ومحاكاة (أحدث مجموعة)
+            {
+                id: 21,
+                title: "100 Pounds Credit",
+                description: "محاكاة لصفحات الجوائز المالية: توعية حول أساليب التصيد بإغراءات الرصيد.",
+                tags: ["Phishing Awareness", "Simulation"],
+                category: "security",
+                icon: "fa-solid fa-money-bill-wave",
+                color: "text-green-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/-ip",
+                    netlify: "https://app.netlify.com/projects/100-pounds-credit/overview",
+                    live: "https://100-pounds-credit.netlify.app/"
+                }
+            },
+            {
+                id: 22,
+                title: "NBE (Simulation)",
+                description: "محاكاة واجهة البنك الأهلي المصري (NBE): مشروع تعليمي للتوعية ضد سرقة البيانات البنكية.",
+                tags: ["Banking", "Phishing Awareness"],
+                category: "security",
+                icon: "fa-solid fa-building-columns",
+                color: "text-emerald-600",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/nbe-com-eg",
+                    netlify: "https://app.netlify.com/projects/nbe-com-eg/overview",
+                    live: "https://nbe-com-eg.netlify.app/"
+                }
+            },
+            {
+                id: 23,
+                title: "Islamic Services",
+                description: "محاكاة الخدمات الدينية: توعية حول استغلال المناسبات الدينية في الهندسة الاجتماعية.",
+                tags: ["Social Engineering", "Religious"],
+                category: "security",
+                icon: "fa-solid fa-mosque",
+                color: "text-teal-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/-",
+                    netlify: "https://app.netlify.com/projects/islamic-services/overview",
+                    live: "https://islamic-services.netlify.app/"
+                }
+            },
+            {
+                id: 24,
+                title: "Ha-cker Terminal",
+                description: "محاكاة طرفية الهكر (Terminal): واجهة تفاعلية تحاكي بيئة الاختراق لأغراض تعليمية.",
+                tags: ["Simulation", "Hacking"],
+                category: "security",
+                icon: "fa-solid fa-terminal",
+                color: "text-red-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/file_hacker",
+                    netlify: "https://app.netlify.com/projects/ha-cker/overview",
+                    live: "https://ha-cker.netlify.app/"
+                }
+            },
+            {
+                id: 25,
+                title: "Hacker Link",
+                description: "أداة كشف الروابط: محاكاة وتوعية حول كيفية عمل الروابط الملغمة وكيفية اكتشافها.",
+                tags: ["Links", "Security Tool"],
+                category: "security",
+                icon: "fa-solid fa-link-slash",
+                color: "text-orange-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/hacker-link",
+                    netlify: "https://app.netlify.com/projects/hacker-link/overview",
+                    live: "https://hacker-link.netlify.app/"
+                }
+            },
+            {
+                id: 26,
+                title: "L0ck (Ransomware)",
+                description: "محاكاة شاشة القفل (Ransomware): تجربة بصرية لما يحدث عند إصابة الجهاز بفيروس الفدية.",
+                tags: ["Malware", "Simulation"],
+                category: "security",
+                icon: "fa-solid fa-lock",
+                color: "text-red-600",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/l0ck",
+                    netlify: "https://app.netlify.com/projects/l0ck/overview",
+                    live: "https://l0ck.netlify.app/"
+                }
+            }
+        ];
+
+        // ============================================
+        // منطق العرض (بدون تغييرات كبيرة)
+        // ============================================
+        
+        const grid = document.getElementById('projectsGrid');
+        const noResults = document.getElementById('noResults');
+
+        function renderProjects(projects) {
+            grid.innerHTML = '';
+            
+            if (projects.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            projects.forEach(project => {
+                const tagsHtml = project.tags.map(tag => 
+                    `<span class="text-[10px] md:text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded border border-gray-700">${tag}</span>`
+                ).join('');
+
+                // منطق تفعيل/تعطيل الأزرار بناء على وجود الرابط
+                const hasGithub = project.links.github && project.links.github !== '#';
+                const hasNetlify = project.links.netlify && project.links.netlify !== '#';
+                const hasLive = project.links.live && project.links.live !== '#';
+
+                const githubClass = hasGithub ? 'bg-gray-800 hover:bg-gray-700 text-white border-gray-600' : 'bg-gray-900 text-gray-600 cursor-not-allowed border-gray-800 opacity-50';
+                const netlifyClass = hasNetlify ? 'bg-teal-900/30 hover:bg-teal-900/50 text-pro-netlify border-teal-900' : 'bg-gray-900 text-gray-600 cursor-not-allowed border-gray-800 opacity-50';
+                const liveClass = hasLive ? 'bg-gradient-to-r from-pro-red to-red-900 hover:from-red-600 hover:to-red-800 text-white border-transparent shadow-lg shadow-red-900/20' : 'bg-gray-900 text-gray-600 cursor-not-allowed border-gray-800 opacity-50';
+
+                const card = document.createElement('div');
+                card.className = 'glass-card p-5 rounded-2xl flex flex-col justify-between h-full relative group border border-gray-800';
+                
+                card.innerHTML = `
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pro-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl"></div>
+                    
+                    <div>
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 shrink-0 rounded-xl bg-gray-900 border border-gray-700 flex items-center justify-center text-2xl ${project.color} shadow-inner">
+                                <i class="${project.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white leading-tight group-hover:text-pro-gold transition-colors">${project.title}</h3>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    ${tagsHtml}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-400 text-xs md:text-sm mb-6 leading-relaxed border-l-2 border-gray-800 pl-3 min-h-[40px]">
+                            ${project.description}
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 mt-auto pt-4 border-t border-gray-800">
+                        <a href="${project.links.github}" ${hasGithub ? 'target="_blank"' : ''} class="project-btn border ${githubClass}">
+                            <i class="fa-brands fa-github text-lg"></i>
+                            <span class="hidden lg:inline">Code</span>
+                        </a>
+
+                        <a href="${project.links.netlify}" ${hasNetlify ? 'target="_blank"' : ''} class="project-btn border ${netlifyClass}">
+                            <i class="fa-solid fa-bolt text-lg"></i>
+                            <span class="hidden lg:inline">Netlify</span>
+                        </a>
+
+                        <a href="${project.links.live}" ${hasLive ? 'target="_blank"' : ''} class="project-btn ${liveClass}">
+                            <i class="fa-solid fa-eye text-lg"></i>
+                            <span class="font-bold">Visit</span>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // منطق الفلترة
+        let currentFilter = 'all';
+
+        function filterProjects(category) {
+            currentFilter = category;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-pro-gold', 'text-black');
+                btn.classList.add('text-gray-300', 'hover:bg-gray-800');
+            });
+            
+            event.currentTarget.classList.remove('text-gray-300', 'hover:bg-gray-800');
+            event.currentTarget.classList.add('bg-pro-gold', 'text-black');
+
+            applyFilters();
+        }
+
+        function searchProjects() {
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = projectsData.filter(project => {
+                const matchesCategory = currentFilter === 'all' || project.category === currentFilter;
+                const matchesSearch = project.title.toLowerCase().includes(searchText) || 
+                                      project.description.toLowerCase().includes(searchText);
+
+                return matchesCategory && matchesSearch;
+            });
+
+            renderProjects(filtered);
+        }
+
+        renderProjects(projectsData);
+    </script>
+</body>
+</html>
+
+
+
