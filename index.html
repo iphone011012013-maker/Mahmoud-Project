@@ -411,7 +411,9 @@
                 <button onclick="filterProjects('security')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-shield-halved ml-2"></i>Security</button>
                 <button onclick="filterProjects('tools')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-toolbox ml-2"></i>Tools</button>
                 <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-globe ml-2"></i>Web</button>
-            </div>
+            <button onclick="filterProjects('pay')" class="filter-btn px-4 py-2 rounded-md text-sm font-bold transition-all text-gray-300 hover:text-white hover:bg-gray-800 flex-1 md:flex-none"><i class="fa-solid fa-money-bill-wave ml-2"></i>pay</button>
+
+               </div>
 
             <!-- شريط البحث -->
             <div class="relative w-full md:w-1/3">
@@ -449,7 +451,7 @@
     <!-- سكربت البيانات والمنطق -->
     <script>
         // ============================================
-        // منطقة البيانات: 26 مشروعاً (القائمة الكاملة)
+        // منطقة البيانات: 30 مشروعاً (القائمة الكاملة)
         // ============================================
         const projectsData = [
             // 1. Tools (Base)
@@ -820,7 +822,92 @@
                     netlify: "https://app.netlify.com/projects/l0ck/overview",
                     live: "https://l0ck.netlify.app/"
                 }
-            }
+            },
+                // 27-30. أدوات الدفع (أحدث مجموعة)
+          {
+                id: 27,
+                title: "Vodafone Cash",
+                description: "VF Cash Helper — بديل التطبيق السريع (آمن وبدون أرقام سرية) ⚡",
+                tags: ["money", "pay"],
+                category: "pay",
+                icon: "fa-solid fa-money-bill",
+                color: "text-red-600",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/vdafone-cash",
+                    netlify: "https://app.netlify.com/projects/vdafone-cash/overview",
+                    live: "https://vdafone-cash.netlify.app/"
+                }
+            },
+         {
+                id: 28,
+                title: "E&Cash",
+                description: "اكتشف E&Cash: أداة متطورة وسريعة لإنجاز معاملاتك. دقة في الحساب وسهولة في الاستخدام.",
+                tags: ["money", "pay"],
+                category: "pay",
+                icon: "fa-solid fa-wallet",
+                color: "text-red-600",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/Eand-cash",
+                    netlify: "https://app.netlify.com/projects/eand-cash/overview",
+                    live: "https://eand-cash.netlify.app/"
+                }
+            },
+          {
+                id: 29,
+                title: "my-we-pay",
+                description: "منصة My We Pay: أدوات ذكية لإدارة مدفوعات We وتطبيقات الويب الحديثة. فكرة وتطوير: محمود أبو الفضل.",
+                tags: ["money", "pay"],
+                category: "pay",
+                icon: "fa-solid fa-money-bill-transfer",
+                color: "text-pink-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/my-we-pay",
+                    netlify: "https://app.netlify.com/projects/my-we-pay/overview",
+                    live: "https://my-we-pay.netlify.app/"
+                }
+            },
+         {
+                id: 30,
+                title: "Orange-cash",
+                description: "Orange Cash | المحفظة الإلكترونية الأسهل والأسرع 🧡",
+                tags: ["money", "pay"],
+                category: "pay",
+                icon: "fa-solid fa-credit-card",
+                color: "text-orange-400",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/Orange-cash",
+                    netlify: "https://app.netlify.com/projects/Orange-cash/overview",
+                    live: "https://Orange-cash.netlify.app/"
+                }
+            },
+         {
+                id: 31,
+                title: "AboElfadl-share",
+                description: "ABO-ELFADL SHARE _ نظام بمشاركة الملفات بدون اعلانات و الحفاظ علي الخصوصيه و سريه البيانات",
+                tags: ["privacy", "share", "file"],
+                category: "tools",
+                icon: "fa-solid fa-share",
+                color: "text-red-600",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/AboElfadl-share",
+                    netlify: "https://app.netlify.com/projects/aboelfadl-share/overview",
+                    live: "https://AboElfadl-share.netlify.app/"
+                }
+            },
+         {
+                id: 32,
+                title: "SEND TELEGRAM",
+                description: "ABO-ELFADL SHARE _ نظام بمشاركة الملفات بدون اعلانات و الحفاظ علي الخصوصيه و سريه البيانات",
+                tags: ["TELEGRAM", "privacy", "SEND", "file"],
+                category: "tools",
+                icon: "fa-solid fa-share-from-square",
+                color: "text-sky-500",
+                links: {
+                    github: "https://github.com/iphone011012013-maker/send-telegram",
+                    netlify: "https://app.netlify.com/projects/send-telegram/overview",
+                    live: "https://send-telegram.netlify.app/"
+                }
+            },
         ];
 
         // ============================================
